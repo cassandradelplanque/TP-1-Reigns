@@ -44,10 +44,10 @@ public class Personnage {
         this.genre = genre;
 
         // Initialisation des jauges entre 15 et 35 points
-        jaugeClerge = new Jauge("Clergé", 15 + (int)(Math.random() * (35 - 15)));
-        jaugePeuple = new Jauge("Peuple", 15 + (int)(Math.random() * (35 - 15)));
-        jaugeArmee = new Jauge("Armée", 15 + (int)(Math.random() * (35 - 15)));
-        jaugeFinance = new Jauge("Finances", 15 + (int)(Math.random() * (35 - 15)));
+        jaugeClerge = new JaugeClerge();
+        jaugePeuple = new JaugePeuple();
+        jaugeArmee = new JaugeArmee();
+        jaugeFinance = new JaugeFinance();
     }
 
     /**

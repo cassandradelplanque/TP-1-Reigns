@@ -7,10 +7,7 @@ package main;
  * @version 1.0
  */
 public class Jauge {
-    /**
-     * Le type de la jauge
-     */
-    protected TypeJauge type;
+
     /**
      * Le nom de la jauge
      */
@@ -24,11 +21,11 @@ public class Jauge {
      * Crée une nouvelle jauge avec le nom et la valeur spécifiés.
      *
      * @param nom Le nom de la jauge
-     * @param valeur La valeur de la jauge
+     *
      */
-    public Jauge(String nom, int valeur){
+    public Jauge(String nom){
         this.nom = nom;
-        this.valeur = valeur;
+        this.valeur = 15 + (int)(Math.random() * (35 - 15));
     }
 
     /**
@@ -67,21 +64,6 @@ public class Jauge {
         this.valeur = valeur;
     }
 
-    /**
-     * Retourne le type de la jauge.
-     *
-     * @return le type de la jauge
-     */
-    public TypeJauge getType() {
-        return type;
-    }
 
-    /**
-     * Modifie le type de la jauge.
-     *
-     * @param type Le nouveau type de la jauge
-     */
-    public void setType(TypeJauge type) {
-        this.type = type;
-    }
+
 }

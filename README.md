@@ -1,4 +1,4 @@
-# Reigns
+# Reigns Decamps Jordan / Delplanque Cassandra 
 
 Dans ce dépôt, vous trouverez une (mauvaise) implémentation du jeu REIGNS. 
 

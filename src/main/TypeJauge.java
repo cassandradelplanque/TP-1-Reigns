@@ -19,5 +19,6 @@ public enum TypeJauge {
     /**
      * Jauge des finances
      */
-    FINANCE
+    FINANCE,
+
 }

@@ -1,65 +1,28 @@
 package main;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import main.TypeJauge;
+
 public class EnsembleJauges {
-    protected Jauge jaugeClerge;
-    /**
-     * La jauge de Peuple
-     */
-    protected Jauge jaugePeuple;
-    /**
-     * La jauge d'Armée
-     */
-    protected Jauge jaugeArmee;
-    /**
-     * La jauge de Finances
-     */
-    protected Jauge jaugeFinance;
+    public ArrayList<Jauge> listeJauges ;
 
-    public Jauge getJaugeClerge() {
-        return jaugeClerge;
-    }
 
-    public void setJaugeClerge(Jauge jaugeClerge) {
-        this.jaugeClerge = jaugeClerge;
-    }
-
-    public Jauge getJaugePeuple() {
-        return jaugePeuple;
-    }
-
-    public void setJaugePeuple(Jauge jaugePeuple) {
-        this.jaugePeuple = jaugePeuple;
-    }
-
-    public Jauge getJaugeArmee() {
-        return jaugeArmee;
-    }
-
-    public void setJaugeArmee(Jauge jaugeArmee) {
-        this.jaugeArmee = jaugeArmee;
-    }
-
-    public Jauge getJaugeFinance() {
-        return jaugeFinance;
-    }
-
-    public void setJaugeFinance(Jauge jaugeFinance) {
-        this.jaugeFinance = jaugeFinance;
-    }
 
     public EnsembleJauges() {
-        jaugeClerge = new JaugeClerge();
-        jaugePeuple = new JaugePeuple();
-        jaugeArmee = new JaugeArmee();
-        jaugeFinance = new JaugeFinance();
+        listeJauges= new ArrayList<>();
+
+        for(TypeJauge v : TypeJauge.values()){
+            listeJauges.add(new Jauge(v.toString()));
+        }
+
     }
 
 
     public void AfficheJauges() {
-        afficheJauge(jaugeClerge);
-        afficheJauge(jaugePeuple);
-        afficheJauge(jaugeArmee);
-        afficheJauge(jaugeFinance);
+        for(Jauge v : listeJauges) {
+            afficheJauge(v);
+        }
         System.out.println();
     }
 
@@ -79,14 +42,15 @@ public class EnsembleJauges {
         System.out.println(resultat);
     }
 
-    public boolean finDuJeu(){
-        return jaugeClerge.getValeur() <= 0
-                || jaugeClerge.getValeur() >= 50
-                || jaugePeuple.getValeur() <= 0
-                || jaugePeuple.getValeur() >= 50
-                || jaugeArmee.getValeur() <= 0
-                || jaugeArmee.getValeur() >= 50
-                || jaugeFinance.getValeur() <= 0
-                || jaugeFinance.getValeur() >= 50;
+    public Boolean finDuJeu(){
+
+        for(Jauge v : listeJauges) {
+            if (v.getValeur() <= 0 || v.getValeur()>= 50){
+                return Boolean.TRUE;
+            }
+        }
+
+        return Boolean.FALSE;
+
     }
 }

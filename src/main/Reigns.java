@@ -101,7 +101,7 @@ public class Reigns {
         if(genre==1){
             Reigns.personnage = new Roi(nom);
         }else{
-            Reigns.personnage = new reine(nom);
+            Reigns.personnage = new Reine(nom);
         }
 
 

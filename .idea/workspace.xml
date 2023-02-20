@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="création des classe reine et Roi + modification de la classe personnage et Reigns">
-      <change afterPath="$PROJECT_DIR$/src/main/Roi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/reine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Reine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Personnage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Reigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Reigns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/reine.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +58,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675259283620</updated>
-      <workItem from="1676898111292" duration="1193000" />
+      <workItem from="1676898111292" duration="1309000" />
     </task>
+    <task id="LOCAL-00001" summary="création des classe reine et Roi + modification de la classe personnage et Reigns">
+      <created>1676899323089</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676899323089</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

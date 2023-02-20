@@ -1,8 +1,8 @@
 package main;
 
-public class reine extends Personnage{
+public class Reine extends Personnage{
 
-    public reine(String nom) {
+    public Reine(String nom) {
         super(nom);
     }
 

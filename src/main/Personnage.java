@@ -6,15 +6,12 @@ package main;
  * @author Julie Jacques / Lucien Mousin
  * @version 1.0
  */
-public class Personnage {
+public abstract class Personnage {
     /**
      * Le nom du personnage
      */
     protected String nom;
-    /**
-     * Le genre du personnage
-     */
-    protected Genre genre;
+
     /**
      * La jauge de Clergé
      */
@@ -37,11 +34,9 @@ public class Personnage {
      * puis initialise les jauges de Clergé, Peuple, Armée et Finances.
      *
      * @param nom Le nom du personnage
-     * @param genre Le genre du personnage
      */
-    public Personnage(String nom, Genre genre) {
+    public Personnage(String nom) {
         this.nom = nom;
-        this.genre = genre;
 
         // Initialisation des jauges entre 15 et 35 points
         jaugeClerge = new JaugeClerge();
@@ -117,20 +112,7 @@ public class Personnage {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    /**
-     * Retourne le genre du personnage
-     * @return le genre du personnage
-     */
-    public Genre getGenre() {
-        return genre;
-    }
-    /**
-     * Modifie le genre du personnage
-     * @param genre Le nouveau genre du personnage
-     */
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
+
     /**
      * Retourne la jauge du clergé
      * @return la jauge du clergé
@@ -191,5 +173,7 @@ public class Personnage {
     public void setJaugeFinance(Jauge jaugeFinance) {
         this.jaugeFinance = jaugeFinance;
     }
+
+    public abstract String longRegne();
 
 }

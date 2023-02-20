@@ -38,7 +38,7 @@ public class Reigns {
 
         initPersonnage();
 
-        System.out.println(personnage.getGenre().longRegne()
+        System.out.println(personnage.longRegne()
                 +" "+personnage.getNom());
 
         personnage.AfficheJauges();
@@ -98,14 +98,13 @@ public class Reigns {
         System.out.println(
                 "Faut-il vous appeler Roi ou Reine ? (1 pour Roi, 2 pour Reine)");
         int genre = scanner.nextInt();
-        Genre roiReine;
         if(genre==1){
-            roiReine = Genre.ROI;
+            Reigns.personnage = new Roi(nom);
         }else{
-            roiReine = Genre.REINE;
+            Reigns.personnage = new reine(nom);
         }
 
-        Reigns.personnage = new Personnage(nom,roiReine);
+
     }
 
     /**

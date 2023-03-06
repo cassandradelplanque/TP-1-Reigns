@@ -1,10 +1,13 @@
 package main;
 
+import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Effet {
-    public Effet(String effetTexte) {
+    public String effetTexte;
+    public TreeMap effetJauge;
+    public Effet(String effetName, String effetTexte ) {
         this.effetTexte = effetTexte;
         this.effetJauge = new TreeMap<>();
     }
@@ -15,10 +18,17 @@ public class Effet {
 
     private void appliqueEffets(Map<TypeJauge,Integer> effets,
                                 Personnage personnage){
+
         for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
 
             for(Jauge v : personnage.jauges.listeJauges) {
-               v.setValeur(v.getValeur()+ effet.getValue());
+                if(v.getNom().equals( effet.getKey().toString())) {
+                    var ttes = v.getValeur() + effet.getValue();
+                    System.out.printf("nbav= " + v.getValeur());
+                    System.out.println("key: " + effet.getKey() + " val: " + effet.getValue());
+                    System.out.println("nb " + ttes);
+                    v.setValeur(v.getValeur() + effet.getValue());
+                }
             }
 
         }
@@ -29,9 +39,15 @@ public class Effet {
        effetJauge.put(jauge,valeur);
     }
 
+    public String getEffetTexte() {
+        return effetTexte;
+    }
 
-    String effetTexte;
-    protected Map<TypeJauge, Integer> effetJauge;
+    public void setEffetTexte(String effetTexte) {
+        this.effetTexte = effetTexte;
+    }
+
+
 
 
 }

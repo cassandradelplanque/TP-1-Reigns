@@ -18,7 +18,6 @@ public class EnsembleJauges {
 
     }
 
-
     public void AfficheJauges() {
         for(Jauge v : listeJauges) {
             afficheJauge(v);

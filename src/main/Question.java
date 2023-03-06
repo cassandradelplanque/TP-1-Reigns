@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -20,11 +21,7 @@ public class Question {
     /**
      * l'effet de la réponse de gauche
      */
-    protected Effet effetGauche;
-    /**
-     * l'effet de la réponse de droite
-     */
-    protected Effet effetDroite;
+   protected EnsembleEffets effets;
 
 
     /**
@@ -32,32 +29,34 @@ public class Question {
      *
      * @param nomPersonnage Le nom du personnage associé à la question
      * @param question La question à poser
-     * @param effetGauche L'effet de la réponse de gauche
-     * @param effetDroite L'effet de la réponse de droite
+     *
      */
     public Question(String nomPersonnage,
                     String question,
-                    String effetGauche,
-                    String effetDroite) {
+                    ArrayList<String> rep) {
         this.nomPersonnage = nomPersonnage;
         this.question = question;
-        this.effetGauche = new Effet(effetGauche);
-        this.effetDroite = new Effet(effetDroite);
+        this.effets= new EnsembleEffets(rep);
+        //this.effetGauche = new Effet(effetGauche);
+        //this.effetDroite = new Effet(effetDroite);
 
     }
 
     /**
      * Affiche la question avec les effets associés aux choix gauche et droit.
      */
+
+
     public void afficheQuestion() {
         String result = "["+nomPersonnage+"] "
-                + question
-                + "[G: "+effetGauche
-                + ",D: "+effetDroite
-                + "]";
+                + question;
         System.out.println(result);
-        System.out.println("Effet G:"+afficheEffets(effetGauche.effetJauge));
-        System.out.println("Effet D:"+afficheEffets(effetDroite.effetJauge));
+
+        effets.AfficheEffets();
+        for (Map.Entry<TypeEffets, Effet> mapentry : effets.listeEffets.entrySet()) {
+            System.out.println(mapentry.getKey().toString() + afficheEffets(mapentry.getValue().effetJauge));
+        }
+
         System.out.flush();
     }
 

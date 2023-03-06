@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
-import static main.TypeEffets.D;
-import static main.TypeEffets.G;
+import static main.TypeEffets.*;
+import static main.TypePerso.*;
 
 
 /**
@@ -44,8 +44,6 @@ public class Reigns {
 
         initPersonnage();
 
-        System.out.println(personnage.longRegne()
-                +" "+personnage.getNom());
 
         personnage.jauges.AfficheJauges();
 
@@ -133,14 +131,22 @@ public class Reigns {
         System.out.println("Entrez le nom du personnage: ");
         System.out.flush();
         String nom = scanner.nextLine();
-        System.out.println(
-                "Faut-il vous appeler Roi ou Reine ? (1 pour Roi, 2 pour Reine)");
-        int genre = scanner.nextInt();
-        if(genre==1){
-            Reigns.personnage = new Roi(nom);
-        }else{
-            Reigns.personnage = new Reine(nom);
+        System.out.println("Faut-il vous appeler");
+        int nb= 0;
+        for(TypePerso tp : TypePerso.values()){
+            System.out.println(tp + "("+ nb +")");
+            nb++;
         }
+        System.out.println("?");
+
+        int genre = scanner.nextInt();
+
+
+        Reigns.personnage = new Personnage(TypePerso.values()[genre], nom);
+        System.out.println(Reigns.personnage.longRegne());
+
+
+
 
 
     }

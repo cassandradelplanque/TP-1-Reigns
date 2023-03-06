@@ -6,7 +6,8 @@ package main;
  * @author Julie Jacques / Lucien Mousin
  * @version 1.0
  */
-public abstract class Personnage {
+
+public class Personnage {
     /**
      * Le nom du personnage
      */
@@ -14,6 +15,7 @@ public abstract class Personnage {
 
 
     protected EnsembleJauges jauges;
+     protected TypePerso genre;
 
 
     public EnsembleJauges getJauges() {
@@ -28,10 +30,11 @@ public abstract class Personnage {
      * Crée un nouveau personnage avec le nom et le genre spécifiés,
      * puis initialise les jauges de Clergé, Peuple, Armée et Finances.
      *
-     * @param nom Le nom du personnage
+     *
      */
-    public Personnage(String nom) {
-        this.nom = nom;
+    public Personnage(TypePerso perso, String nom ) {
+        this.nom=nom;
+        this.genre= perso;
 
         this.jauges= new EnsembleJauges();
 
@@ -57,6 +60,9 @@ public abstract class Personnage {
 
 
 
-    public abstract String longRegne();
+    public String longRegne(){
+        return "Long regne: "+ genre.toString()+" "+ nom;
+
+    };
 
 }

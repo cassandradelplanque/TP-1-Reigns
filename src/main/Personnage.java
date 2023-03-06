@@ -13,18 +13,7 @@ public class Personnage {
      */
     protected String nom;
 
-
-    protected EnsembleJauges jauges;
      protected TypePerso genre;
-
-
-    public EnsembleJauges getJauges() {
-        return jauges;
-    }
-
-    public void setJauges(EnsembleJauges jauges) {
-        this.jauges = jauges;
-    }
 
     /**
      * Crée un nouveau personnage avec le nom et le genre spécifiés,
@@ -36,10 +25,7 @@ public class Personnage {
         this.nom=nom;
         this.genre= perso;
 
-        this.jauges= new EnsembleJauges();
-
     }
-
 
 
     /**
@@ -49,16 +35,6 @@ public class Personnage {
     public String getNom() {
         return nom;
     }
-    /**
-     * Modifie le nom du personnage
-     * @param nom Le nouveau nom du personnage
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-
-
 
     public String longRegne(){
         return "Long regne: "+ genre.toString()+" "+ nom;

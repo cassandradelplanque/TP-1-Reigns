@@ -1,12 +1,10 @@
 package main;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
 import static main.TypeEffets.*;
-import static main.TypePerso.*;
 
 
 /**
@@ -26,6 +24,8 @@ public class Reigns {
      */
     private static ArrayList<Question> questions;
 
+    protected static EnsembleJauges jauges;
+
     /**
      * La méthode main lance le jeu Reigns. Il initialise les questions, le personnage,
      * affiche les jauges du personnage et lance une boucle de jeu qui se termine lorsque le personnage perd.
@@ -38,6 +38,7 @@ public class Reigns {
         // début du jeu
         System.out.println("Bienvenue sur Reigns");
 
+        jauges= new EnsembleJauges();
         initBanqueQuestions();
 
         System.out.println("Création du personnage...");
@@ -45,15 +46,15 @@ public class Reigns {
         initPersonnage();
 
 
-        personnage.jauges.AfficheJauges();
+        jauges.AfficheJauges();
 
         // tirage des questions
         int nbTours = 0;
-        while(!personnage.jauges.finDuJeu()){
+        while(!jauges.finDuJeu()){
             nbTours++;
             Question question = getQuestionAleatoire();
             reponseQuestion(question);
-            personnage.jauges.AfficheJauges();
+            jauges.AfficheJauges();
         }
 
         // fin du jeu
@@ -109,15 +110,11 @@ public class Reigns {
 
         // applique les malus
         for (Map.Entry<TypeEffets, Effet> mapentry : question.effets.listeEffets.entrySet()) {
-            System.out.println("rep"+reponse);
-            System.out.println("key"+mapentry.getKey());
             if (reponse.equals(mapentry.getKey().toString())){
 
-                mapentry.getValue().appliqueEffets(personnage);
+                mapentry.getValue().appliqueEffets(jauges);
             }
-
         }
-
 
     }
 
@@ -144,10 +141,6 @@ public class Reigns {
 
         Reigns.personnage = new Personnage(TypePerso.values()[genre], nom);
         System.out.println(Reigns.personnage.longRegne());
-
-
-
-
 
     }
 

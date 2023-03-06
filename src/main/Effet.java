@@ -11,22 +11,19 @@ public class Effet {
         this.effetTexte = effetTexte;
         this.effetJauge = new TreeMap<>();
     }
-    public void appliqueEffets(Personnage personnage){
-        this.appliqueEffets(effetJauge, personnage);
+    public void appliqueEffets(EnsembleJauges jauges){
+        this.appliqueEffets(effetJauge, jauges);
     }
 
 
     private void appliqueEffets(Map<TypeJauge,Integer> effets,
-                                Personnage personnage){
+                                EnsembleJauges jauges){
 
         for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
 
-            for(Jauge v : personnage.jauges.listeJauges) {
+            for(Jauge v : jauges.listeJauges) {
                 if(v.getNom().equals( effet.getKey().toString())) {
                     var ttes = v.getValeur() + effet.getValue();
-                    System.out.printf("nbav= " + v.getValeur());
-                    System.out.println("key: " + effet.getKey() + " val: " + effet.getValue());
-                    System.out.println("nb " + ttes);
                     v.setValeur(v.getValeur() + effet.getValue());
                 }
             }
@@ -38,16 +35,6 @@ public class Effet {
                                   int valeur){
        effetJauge.put(jauge,valeur);
     }
-
-    public String getEffetTexte() {
-        return effetTexte;
-    }
-
-    public void setEffetTexte(String effetTexte) {
-        this.effetTexte = effetTexte;
-    }
-
-
 
 
 }

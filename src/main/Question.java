@@ -37,8 +37,6 @@ public class Question {
         this.nomPersonnage = nomPersonnage;
         this.question = question;
         this.effets= new EnsembleEffets(rep);
-        //this.effetGauche = new Effet(effetGauche);
-        //this.effetDroite = new Effet(effetDroite);
 
     }
 
@@ -77,69 +75,5 @@ public class Question {
         }
         return result.toString();
     }
-
-    /**
-     * Applique les effets associés au choix gauche sur un personnage donné.
-     *
-     * @param personnage le personnage sur lequel les effets doivent être appliqués
-     */
-
-    /**
-     * Applique les effets d'une jauge sur un personnage donné.
-     *
-     * @param effets les effets de jauge à appliquer
-     * @param personnage le personnage sur lequel les effets doivent être appliqués
-     */
-
-
-    /**
-     * Ajoute un effet à la jauge associée au choix gauche.
-     *
-     * @param jauge la jauge à laquelle l'effet doit être ajouté
-     * @param valeur la valeur de l'effet à ajouter
-     */
-
-    /**
-     * Retourne le nom du personnage associé à la question.
-     *
-     * @return le nom du personnage associé à la question
-     */
-    public String getNomPersonnage() {
-        return nomPersonnage;
-    }
-
-    /**
-     * Modifie le nom du personnage associé à la question.
-     *
-     * @param nomPersonnage le nouveau nom du personnage associé à la question
-     */
-    public void setNomPersonnage(String nomPersonnage) {
-        this.nomPersonnage = nomPersonnage;
-    }
-
-    /**
-     * Retourne la question.
-     *
-     * @return la question
-     */
-    public String getQuestion() {
-        return question;
-    }
-
-    /**
-     * Modifie la question.
-     *
-     * @param question la nouvelle question
-     */
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    /**
-     * Retourne l'effet gauche de la question.
-     *
-     * @return l'effet gauche de la question.
-     */
-
 
 }

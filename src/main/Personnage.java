@@ -13,7 +13,7 @@ public class Personnage {
      */
     protected String nom;
 
-     protected TypePerso genre;
+    protected TypePerso genre;
 
     /**
      * Crée un nouveau personnage avec le nom et le genre spécifiés,

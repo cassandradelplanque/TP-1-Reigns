@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class Effet {
     public String effetTexte;
     public TreeMap effetJauge;
-    public Effet(String effetName, String effetTexte ) {
+    public Effet( String effetTexte ) {
         this.effetTexte = effetTexte;
         this.effetJauge = new TreeMap<>();
     }
@@ -23,7 +23,7 @@ public class Effet {
 
             for(Jauge v : jauges.listeJauges) {
                 if(v.getNom().equals( effet.getKey().toString())) {
-                    var ttes = v.getValeur() + effet.getValue();
+
                     v.setValeur(v.getValeur() + effet.getValue());
                 }
             }

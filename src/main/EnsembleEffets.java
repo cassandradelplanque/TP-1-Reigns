@@ -15,7 +15,7 @@ public class EnsembleEffets {
         int i=0;
         for(TypeEffets v : TypeEffets.values()){
             if (rep.size()>i){
-                this.listeEffets.put( v, new Effet(v.toString(), rep.get(i)));
+                this.listeEffets.put( v, new Effet( rep.get(i)));
                 i++;
             }
 

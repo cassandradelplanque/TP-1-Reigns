@@ -51,11 +51,21 @@ public class Question {
         System.out.println(result);
 
         effets.AfficheEffets();
+        String choix = "Entrez la réponse (";
+        int test=0;
         for (Map.Entry<TypeEffets, Effet> mapentry : effets.listeEffets.entrySet()) {
             System.out.println(mapentry.getKey().toString() + afficheEffets(mapentry.getValue().effetJauge));
+            if (test!=0){
+                choix+=" ou ";
+
+            }
+            choix+=mapentry.getKey().toString();
+            test=1;
         }
+        choix+=")";
 
         System.out.flush();
+        System.out.println(choix);
     }
 
     /**

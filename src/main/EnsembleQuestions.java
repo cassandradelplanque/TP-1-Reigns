@@ -10,72 +10,66 @@ public class EnsembleQuestions {
 
     public EnsembleQuestions() {
         questions = new ArrayList<>();
-        var choix1= new ArrayList<String>();
-        choix1.add("oui");
-        choix1.add("non");
-        Question question1 = new Question(
-                "Main du roi",
-                "Le peuple souhaite libérer les prisonniers",choix1);
 
-        question1.effets.listeEffets.get(G).ajouteEffet(TypeJauge.ARMEE, -5);
-        question1.effets.listeEffets.get(G).ajouteEffet(TypeJauge.PEUPLE, +5);
-        question1.effets.listeEffets.get(D).ajouteEffet(TypeJauge.PEUPLE, -7);
+        Question question1 = new Question("Main du roi", "Le peuple souhaite libérer les prisonniers");
+        Proposition prop1= new Proposition("oui", G);
+        Proposition prop2= new Proposition("non", D);
+        prop1.ajoutEffet(TypeJauge.ARMEE, -5);
+        prop1.ajoutEffet(TypeJauge.PEUPLE, +5);
+        prop2.ajoutEffet(TypeJauge.PEUPLE, -7);
+        question1.propositions.add(prop1);
+        question1.propositions.add(prop2);
         questions.add(question1);
-        var choix2= new ArrayList<String>();
-        choix2.add("Importer de la nourriture");
-        choix2.add("Ne rien faire");
-        Question question2 = new Question(
-                "Paysan",
-                "Il n'y a plus rien à manger",
-                choix2);
-        question2.effets.listeEffets.get(G).ajouteEffet(TypeJauge.FINANCE,-5);
-        question2.effets.listeEffets.get(G).ajouteEffet(TypeJauge.PEUPLE, +5);
-        question2.effets.listeEffets.get(D).ajouteEffet(TypeJauge.PEUPLE, -5);
+
+        Question question2 = new Question("Paysan", "Il n'y a plus rien à manger");
+        Proposition prop3= new Proposition("Importer de la nourriture", G);
+        Proposition prop4= new Proposition("Il n'y a plus rien à manger", D);
+        prop3.ajoutEffet(TypeJauge.FINANCE,-5);
+        prop3.ajoutEffet(TypeJauge.PEUPLE, +5);
+        prop4.ajoutEffet(TypeJauge.PEUPLE, -5);
+        question2.propositions.add(prop3);
+        question2.propositions.add(prop4);
         questions.add(question2);
-        var choix3= new ArrayList<String>();
-        choix3.add("Faire un sacrifice");
-        choix3.add("Ne rien faire");
-        Question question3 = new Question(
-                "Prêtre",
-                "Les dieux sont en colère",
-                choix3);
-        question3.effets.listeEffets.get(G).ajouteEffet(TypeJauge.CLERGE, +5);
-        question3.effets.listeEffets.get(G).ajouteEffet(TypeJauge.PEUPLE, -3);
-        question3.effets.listeEffets.get(D).ajouteEffet(TypeJauge.CLERGE, -5);
+
+        Question question3 = new Question("Prêtre", "Les dieux sont en colère");
+        Proposition prop5= new Proposition("Faire un sacrifice", G);
+        Proposition prop6= new Proposition("Ne rien faire", D);
+        prop5.ajoutEffet(TypeJauge.CLERGE, +5);
+        prop5.ajoutEffet(TypeJauge.PEUPLE, -3);
+        prop6.ajoutEffet(TypeJauge.PEUPLE, -3);
+        question3.propositions.add(prop5);
+        question3.propositions.add(prop6);
         questions.add(question3);
-        var choix4= new ArrayList<String>();
-        choix4.add("Le soutenir");
-        choix4.add("Rester neutre");
-        Question question4 = new Question(
-                "Main du roi",
-                "Le roi Baratheon rassemble son armée",
-                choix4);
-        question4.effets.listeEffets.get(G).ajouteEffet(TypeJauge.ARMEE, +3);
-        question4.effets.listeEffets.get(G).ajouteEffet(TypeJauge.FINANCE, -3);
-        question4.effets.listeEffets.get(G).ajouteEffet(TypeJauge.CLERGE, -3);
-        question4.effets.listeEffets.get(D).ajouteEffet(TypeJauge.PEUPLE, +3);
+
+        Question question4 = new Question("Main du roi", "Le roi Baratheon rassemble son armée");
+        Proposition prop7= new Proposition("Le soutenir", G);
+        Proposition prop8= new Proposition("Rester neutre", D);
+        prop7.ajoutEffet(TypeJauge.ARMEE, +3);
+        prop7.ajoutEffet(TypeJauge.FINANCE, -3);
+        prop7.ajoutEffet(TypeJauge.CLERGE, -3);
+        prop8.ajoutEffet(TypeJauge.PEUPLE, +3);
+        question4.propositions.add(prop7);
+        question4.propositions.add(prop8);
         questions.add(question4);
-        var choix5= new ArrayList<String>();
-        choix5.add("Taxer énormément");
-        choix5.add( "Taxer un tout petit peu");
-        Question question5 = new Question(
-                "Paysan",
-                "Abondance de récoltes cette année",
-                choix5);
-        question5.effets.listeEffets.get(G).ajouteEffet(TypeJauge.FINANCE, +10);
-        question5.effets.listeEffets.get(G).ajouteEffet(TypeJauge.PEUPLE, -5);
-        question5.effets.listeEffets.get(D).ajouteEffet(TypeJauge.FINANCE, +1);
-        question5.effets.listeEffets.get(D).ajouteEffet(TypeJauge.PEUPLE, -3);
+
+        Question question5 = new Question("Paysan", "Abondance de récoltes cette année");
+        Proposition prop9= new Proposition("Taxer énormément", G);
+        Proposition prop10= new Proposition("Taxer un tout petit peu", D);
+        prop9.ajoutEffet(TypeJauge.FINANCE, +10);
+        prop9.ajoutEffet(TypeJauge.PEUPLE, -5);
+        prop10.ajoutEffet(TypeJauge.FINANCE, +1);
+        prop10.ajoutEffet(TypeJauge.PEUPLE, -3);
+        question5.propositions.add(prop9);
+        question5.propositions.add(prop10);
         questions.add(question5);
+
+
 
 
     }
 
 
-    /**
-     * Cette fonction permet de tirer une question aléatoire dans la banque de questions.
-     * @return Une question aléatoire
-     */
+
     public static Question getQuestionAleatoire(){
         int numQuestion = (int) (Math.random()*questions.size());
         return questions.get(numQuestion);

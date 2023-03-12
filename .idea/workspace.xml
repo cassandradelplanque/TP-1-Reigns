@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="Création de la classe EnsembleQuestions et modification des fonctions d'affichage des questions">
-      <change afterPath="$PROJECT_DIR$/src/main/EnsembleQuestions.java" afterDir="false" />
+    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="Modification de la structure d'une question avec la mise en place d'une classe Proposition qui vient remplacer les classes EnsembleEffets et Effet  (et suppression des commmentaires)">
+      <change afterPath="$PROJECT_DIR$/src/main/Proposition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Effet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Effet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/EnsembleEffets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EnsembleEffets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Effet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EnsembleEffets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EnsembleJauges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EnsembleJauges.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EnsembleQuestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EnsembleQuestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Jauge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Jauge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Personnage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Reigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Reigns.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TypeEffets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TypeEffets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TypeJauge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TypeJauge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TypePerso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TypePerso.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678115052357</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Création de la classe EnsembleQuestions et modification des fonctions d'affichage des questions">
+      <created>1678561196640</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678561196640</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +150,8 @@
     <MESSAGE value="Création de la classe effet et modification des classes de jauge pour pouvoir permettre l'ajout" />
     <MESSAGE value="Création du type de personnage à la place des classes ROI REINE..." />
     <MESSAGE value="Création de la classe EnsembleQuestions et modification des fonctions d'affichage des questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création de la classe EnsembleQuestions et modification des fonctions d'affichage des questions" />
+    <MESSAGE value="Modification de la structure d'une question avec la mise en place d'une classe Proposition qui vient remplacer les classes EnsembleEffets et Effet  (et suppression des commmentaires)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification de la structure d'une question avec la mise en place d'une classe Proposition qui vient remplacer les classes EnsembleEffets et Effet  (et suppression des commmentaires)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

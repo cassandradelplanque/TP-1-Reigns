@@ -1,6 +1,5 @@
 package main;
 
 public enum TypePerso {
-    ROI,
-    REINE
+    ROI, REINE
 }
